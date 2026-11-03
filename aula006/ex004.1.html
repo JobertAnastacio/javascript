@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Tit{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var n = String((window.prompt('Qual seu nome? ')))
+        var salario = Number((window.prompt(`Qual seu salário ${n}? `)))
+        document.write(salario.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'}))
+    </script>
+</body>
+</html>
