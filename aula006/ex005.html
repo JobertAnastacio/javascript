@@ -13,17 +13,22 @@
     </style>
 </head>
 <body>
-    <h1>estudos Dom</h1>
-    <p id="msg">aqui vai o resultado.</p>
-    <p>apredendo a usar <strong>DOM</strong> em java script</p>
-    <div>Clique aqui</div>
+    <main id="jj">
+        <h1>estudos Dom</h1>
+        <p id="msg">aqui vai o resultado.</p>
+        <p>apredendo a usar <strong>DOM</strong> em java script</p>
+        <div>Clique aqui</div>
+    </main>
     <script>
-        var p1 = window.document.getElementsByTagName('p')[1]
+        var p1 = window.document.getElementsByTagName('p')[1]//ese numero se refere a qual vc vai selecionar começa no 0
     //     var d = window.document.getElementById('msg')
     //     d.style.backgroundColor = 'pink'
     //     d.innerText = 'blue'
         var j = window.document.querySelector('p#msg')
         j.style.color = 'red'
+        var ff = window.document.querySelector('main')
+        ff.style.backgroundColor = 'white'
+        ff.style.color = 'black'
     </script>
     
 </body>
