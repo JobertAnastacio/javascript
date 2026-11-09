@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nacionalidade</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        h1{
+            padding: 20px;
+            text-align: center;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(126, 2, 120);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        main{
+            background-color: black;
+            color: white;
+            margin: auto;
+            text-align: center;
+            width: 60vw;
+            height: 400px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.562);
+        }
+        input{
+            display: block;
+            margin: 20px;
+            text-align: center;
+            width: 50%;
+            height: 40px;
+            font-size: 1.3em;
+        }
+        label{
+            display: block;
+            margin: 20px;
+            text-align: center;
+            
+        }
+        div > h3 > strong{
+            color: rgb(126, 2, 120);
+        }
+    </style>
 </head>
 <body>
     <h1>Verificando nacionalidade</h1>
+    <main>
+        <label for="inasc"><h1>Digite seu pais</h1></label>
+        <input type="text" name="nasc" id="inasc">
+        <input type="submit" value="Enviar" onclick = "verificar()">
+        <div id="res"></div>
+        <script>
+            function verificar(){
+                var nacionalidade = (document.getElementById('inasc').value).toUpperCase()
+                var resultado = document.querySelector('div#res')
+                if (nacionalidade === 'BRASIL'){
+                    resultado.innerHTML = `<h3>Você é do <strong>${nacionalidade}</strong> portanto é <strong>Brasileiro</strong>.</h3> 🌎`
+                    
+                }
+                else{
+                    resultado.innerHTML = `<h3>Você é do <strong>${nacionalidade}</strong> portanto é <strong>Estrangeiro</strong>.</h3> 🌐`
+                }
+            }
+        </script>
+    </main>
 </body>
 </html>
