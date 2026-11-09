@@ -60,19 +60,7 @@
         <input type="text" name="nasc" id="inasc">
         <input type="submit" value="Enviar" onclick = "verificar()">
         <div id="res"></div>
-        <script>
-            function verificar(){
-                var nacionalidade = (document.getElementById('inasc').value).toUpperCase()
-                var resultado = document.querySelector('div#res')
-                if (nacionalidade === 'BRASIL'){
-                    resultado.innerHTML = `<h3>Você é do <strong>${nacionalidade}</strong> portanto é <strong>Brasileiro</strong>.</h3> 🌎`
-                    
-                }
-                else{
-                    resultado.innerHTML = `<h3>Você é do <strong>${nacionalidade}</strong> portanto é <strong>Estrangeiro</strong>.</h3> 🌐`
-                }
-            }
-        </script>
+        <script src="pais.js"></script>
     </main>
 </body>
 </html>
