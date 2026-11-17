@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(0, 83, 21);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+        main{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            margin: auto;
+            padding: 30px;
+            width: 40vw;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            border-radius: 20px;
+        }
+        input#iano{
+           height: 25px;
+        }
+        div.sexo{
+            margin: 20px 0px 0px 0px;
+        }
+        input#enviar{
+            margin:  20px 0px;
+            padding: 3px;
+            font-size: 0.7em;
+            width: 75px;
+        }
+        form{
+            font-size: 1.5em;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <form action="#">
+            <label for="iano">Ano de nascimento:</label>
+            <input type="number" name="ano" id="iano">
+            <div class="sexo">
+                Sexo: 
+                <input type="radio" name="sexo" id="isexo" value="M">
+                <label for="isexo"> Masculino</label>
+                <input type="radio" name="sexo" id="iisexo" value="F">
+                <label for="iisexo"> Feminino</label>
+            </div>
+            <input type="submit" value="Enviar" id="enviar">
+            <div id="txt">Preencha os campos para ver o resultado!</div>
+        </form>
+    </main>
+</body>
+</html>
