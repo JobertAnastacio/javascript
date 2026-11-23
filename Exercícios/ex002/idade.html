@@ -22,16 +22,16 @@
         main{
             background-color: rgb(255, 255, 255);
             color: rgb(0, 0, 0);
+            width: 600px;
             margin: auto;
             padding: 30px;
-            width: 40vw;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             border-radius: 20px;
         }
         input#iano{
-           height: 25px;
+           height: 20px;
         }
         div.sexo{
             margin: 20px 0px 0px 0px;
@@ -39,33 +39,110 @@
         input#enviar{
             margin:  20px 0px;
             padding: 3px;
-            font-size: 0.7em;
-            width: 75px;
+            font-size: 0.6em;
+            width: 60px;
         }
-        form{
-            font-size: 1.5em;
+        div#txt{
+            margin-bottom: 15px;
         }
         
+        section{
+            width: 100%;
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+        
+        footer > p {
+            text-align: center;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        footer > p > a{
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <h1>Verificador de Idade</h1>
     <main>
-        <form action="#">
+        <section>
             <label for="iano">Ano de nascimento:</label>
             <input type="number" name="ano" id="iano">
             <div class="sexo">
                 Sexo: 
-                <input type="radio" name="sexo" id="isexo" value="M">
+                <input type="radio" name="sexo" id="isexo" value="Homem">
                 <label for="isexo"> Masculino</label>
-                <input type="radio" name="sexo" id="iisexo" value="F">
+                <input type="radio" name="sexo" id="iisexo" value="Mulher">
                 <label for="iisexo"> Feminino</label>
             </div>
-            <input type="submit" value="Enviar" id="enviar">
-            <div id="txt">Preencha os campos para ver o resultado!</div>
-        </form>
+            <input type="submit" value="Enviar" id="enviar" onclick="resultado()">
+            <div id="txt">Preencha os campos acima para ver o resultado!</div>
+            <div id="img">
+
+            </div>
+        </section>
     </main>
+    <footer>
+        <p><a href="https://github.com/JobertAnastacio" target="_blank" id="rodape">@jobert_anastacio</a></p>
+    </footer>
     <script>
+        
+        function resultado(){
+            var c = document.getElementById('txt')
+            var ano = Number(document.getElementById('iano').value)
+            var anoat = new Date()
+            var anoatual = anoat.getFullYear()
+            var idade = anoatual - ano
+            var sexo = (document.querySelector('input[name="sexo"]:checked').value)
+            var foto = document.getElementById('img')
+            if (ano > anoatual){
+                window.alert('[ERRO] Verifique os Dados e tente novamente')
+            }
+            else if(ano == ''){
+                window.alert('[ERRO] Verifique os Dados e tente novamente')
+            }
+            else{
+                if (sexo == 'Mulher' && idade <= 50){
+                    c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
+                    c.style.setProperty('text-align','center')
+                    foto.style.setProperty('width', '200px')
+                    foto.style.setProperty('height', '205px')
+                    foto.style.setProperty('border-radius', '50%')
+                    foto.style.setProperty('margin','auto')
+                    foto.style.background = 'url("imagens/avatar-feminino-1.png") center center/cover no-repeat scroll'
+                }
+                else if(sexo == 'Mulher' && idade > 50){
+                    c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
+                    c.style.setProperty('text-align','center')
+                    foto.style.setProperty('width', '200px')
+                    foto.style.setProperty('height', '205px')
+                    foto.style.setProperty('border-radius', '50%')
+                    foto.style.setProperty('margin','auto')
+                    foto.style.background = 'url("imagens/avatar-feminino-2.png") center center/cover no-repeat scroll'
+                }
+                if (sexo == 'Homem' && idade <= 50) {
+                    c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
+                    c.style.setProperty('text-align','center')
+                    foto.style.setProperty('width', '200px')
+                    foto.style.setProperty('height', '205px')
+                    foto.style.setProperty('border-radius', '50%')
+                    foto.style.setProperty('margin','auto')
+                    foto.style.background = 'url("imagens/avatares-masculino-1.jpg") center center/cover no-repeat scroll'
+                }
+                else if(sexo == 'Homem' && idade > 50){
+                    c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
+                    c.style.setProperty('text-align','center')
+                    foto.style.setProperty('width', '200px')
+                    foto.style.setProperty('height', '205px')
+                    foto.style.setProperty('border-radius', '50%')
+                    foto.style.setProperty('margin','auto')
+                    foto.style.background = 'url("imagens/avatares-masculino-2.jpg") center center/cover no-repeat scroll'
+                }
+            }
+        }
 
     </script>
 </body>
