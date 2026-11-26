@@ -1,4 +1,5 @@
-  var time = new Date()
+function carregar(){
+    var time = new Date()
     var hora = time.getHours()
     var horario = document.querySelector('div#horas')
     var fundo = document.getElementById('fundo')
@@ -6,8 +7,6 @@
     var imagem = document.getElementById('img')
     var rodape = document.getElementById('rodape')
     var main = document.getElementById('main')
-        
-        
     if (hora <= 12){
         horario.innerHTML = `<h3>Bom dia, são ${hora} horas</h3>`
     }
@@ -31,3 +30,4 @@
         img.src = '../imagens/lua-noite.png'
         main.style.background = '#0D1F2D'
     }
+}
