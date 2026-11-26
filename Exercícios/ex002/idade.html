@@ -99,12 +99,15 @@
             var idade = anoatual - ano
             var sexo = (document.querySelector('input[name="sexo"]:checked').value)
             var foto = document.getElementById('img')
+            // poderia fazer mais dinamico imagem assim: var foto = document.createElement('img')
+            // foto.setAttribute('id','img')
             if (ano > anoatual){
                 window.alert('[ERRO] Verifique os Dados e tente novamente')
             }
             else if(ano == ''){
                 window.alert('[ERRO] Verifique os Dados e tente novamente')
             }
+            // poderia ser ano.length == 0 || ano > anoatual 
             else{
                 if (sexo == 'Mulher' && idade <= 50){
                     c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
@@ -114,6 +117,7 @@
                     foto.style.setProperty('border-radius', '50%')
                     foto.style.setProperty('margin','auto')
                     foto.style.background = 'url("imagens/avatar-feminino-1.png") center center/cover no-repeat scroll'
+                    // poderia usar aqui foto.setAttribute('src','imagens/avatar-feminino-1.png')
                 }
                 else if(sexo == 'Mulher' && idade > 50){
                     c.innerHTML = `Indentificamos ${sexo} com ${idade} anos.`
