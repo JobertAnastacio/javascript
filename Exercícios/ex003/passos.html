@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passos</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(83, 0, 0);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+        main{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            max-width: 600px;
+            width: 70vw;
+            margin: auto;
+            padding: 30px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            border-radius: 20px;
+        }
+        
+        section{
+            width: 100%;
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+        
+        div.começo{
+            margin: 10px 0px
+        }
+
+        footer > p {
+            text-align: center;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        footer > p > a{
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <section id="pai">
+            <div class="começo" id="inicio">
+                <label for="inicio">Inicio:</label>
+                <input type="number" name="inic" id="inicio">
+            </div>
+
+            <div class="começo" id="fim">
+                <label for="fim">Fim:</label>
+                <input type="number" name="end" id="fim">
+            </div>
+            <div class="começo" id="passo">
+                <label for="passo">passo:</label>
+                <input type="number" name="pass" id="passo">
+            </div>
+            <input type="button" value=" Contar " onclick="passos()">
+            
+            <p class="começo" id="txt">Preparando a Contagem...</p>
+        </section>
+    </main>
+    <footer>
+        <p><a href="https://github.com/JobertAnastacio" target="_blank" id="rodape">@jobert_anastacio</a></p>
+    </footer>
+    <script src="passos.js"></script>
+</body>
+</html>
